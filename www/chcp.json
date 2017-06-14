@@ -3,5 +3,6 @@
   "update": "now",
   "content_url": "http://172.20.10.6:8888/hot-code-update/dev/",
   "min_native_interface": 4,
-  "android_identifier": "http://172.20.10.6:8888/hot-code-update/apk/demo.apk"
+  "android_identifier": "http://172.20.10.6:8888/hot-code-update/apk/demo.apk",
+  "release": "2017.06.14-15.40.53"
 }

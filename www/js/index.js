@@ -20,6 +20,7 @@ var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+        document.addEventListener('chcp_updateLoadFailed', this.onUpdateLoadError, false);
     },
 
     // deviceready Event Handler
@@ -40,6 +41,33 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+
+
+    onUpdateLoadError: function(eventData) {
+        var error = eventData.detail.error;
+        console.log('error:', error);
+        console.log('error code:', error.code);
+        console.log('chcp.error.APPLICATION_BUILD_VERSION_TOO_LOW:', chcp.error.APPLICATION_BUILD_VERSION_TOO_LOW);
+        
+        // 如果主版本更新要做的事情
+        if (error && error.code == chcp.error.APPLICATION_BUILD_VERSION_TOO_LOW) {
+            var dialogMessage = '有新的版本，請下載更新';
+
+            chcp.requestApplicationUpdate(dialogMessage, this.userWentToStoreCallback, this.userWentToStoreCallback);
+
+        }
+    },
+
+    userWentToStoreCallback: function() {
+        // user went to the store from the dialog
+        console.log('點擊了連到App Store');
+    },
+
+    userDeclinedRedirectCallback: function() {
+        // User didn't want to leave the app.
+        // Maybe he will update later.
+        console.log('點擊了稍後更新');
     }
 };
 

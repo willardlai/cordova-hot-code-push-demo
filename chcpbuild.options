@@ -1,0 +1,8 @@
+{
+  "dev": {
+    "config-file": "http://172.20.10.6:8888/hot-code-update/dev/chcp.json"
+  },
+  "production": {
+    "config-file": "http://172.20.10.6:8888/hot-code-update/production/chcp.json"
+  }
+}

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="1" id="com.willard.code" ios-CFBundleVersion="10" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="4" id="com.willard.code" ios-CFBundleVersion="40" version="4.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>CordovaHotCodePushDemo</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
@@ -23,6 +23,7 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <chcp>
+        <native-interface version="4" />
         <config-file url="http://172.20.10.6:8888/hot-code-update/chcp.json" />
     </chcp>
     <engine name="android" spec="^6.2.3" />
